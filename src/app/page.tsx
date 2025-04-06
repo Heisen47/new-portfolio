@@ -1,8 +1,8 @@
 
-const page = () => {
+export default function Page() {
   return (
-    <div>page</div>
+    <div>
+      <h1>Welcome to my portfolio</h1>
+    </div>
   )
 }
-
-export default page
