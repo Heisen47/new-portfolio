@@ -8,7 +8,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
   color-scheme: dark;
 }
@@ -17,6 +16,27 @@
   margin-top: -100px;
   padding-bottom: 100px;
   display: block;
+}
+
+/* Option 1: Inter + Poppins */
+.font-option-1 {
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+}
+
+/* Option 2: Montserrat + DM Sans */
+.font-option-2 {
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+/* Apply fonts globally */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+body {
+  font-family: var(--font-body);
 }
 
 .black-gradient {
