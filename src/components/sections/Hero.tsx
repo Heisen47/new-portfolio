@@ -13,10 +13,9 @@ const Hero = () => {
     if (text.length < fullText.length) {
       const timeout = setTimeout(() => {
         setText(fullText.slice(0, text.length + 1))
-      }, 150) // Adjust typing speed here
+      }, 150) 
       return () => clearTimeout(timeout)
     } else {
-      // Set typing as done when the full text is displayed
       setIsTypingDone(true)
     }
   }, [text])
@@ -24,7 +23,7 @@ const Hero = () => {
   useEffect(() => {
     const cursorInterval = setInterval(() => {
       setShowCursor(prev => !prev)
-    }, 530) // Cursor blink speed
+    }, 530) 
     return () => clearInterval(cursorInterval)
   }, [])
 
