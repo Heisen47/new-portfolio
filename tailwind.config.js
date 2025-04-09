@@ -1,5 +1,5 @@
 module.exports = {
-    darkMode: ["class"],
+    darkMode: "class",
     content: [
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
@@ -14,9 +14,8 @@ module.exports = {
   				DEFAULT: 'hsl(var(--secondary))',
   				foreground: 'hsl(var(--secondary-foreground))'
   			},
-  			background: 'hsl(var(--background))',
-  			'text-primary': 'var(--text-color)',
-  			foreground: 'hsl(var(--foreground))',
+  			background: 'var(--background)',
+        	foreground: 'var(--foreground)',
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'

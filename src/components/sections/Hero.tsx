@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { ContactModal } from '@/components/ui/ContactModal'
 
 const Hero = () => {
   const [text, setText] = useState('')
   const fullText = 'Hi! I am Rishi'
   const [showCursor, setShowCursor] = useState(true)
   const [isTypingDone, setIsTypingDone] = useState(false)
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
   useEffect(() => {
     if (text.length < fullText.length) {
@@ -70,18 +72,23 @@ const Hero = () => {
             >
               Your friendly neighbourhood Software Engineer
             </motion.p>
-            <motion.a
-              href='#contact'
+            <motion.button
+              onClick={() => setIsContactModalOpen(true)}
               className='inline-block rounded-full bg-blue-500 px-6 py-3 hover:bg-blue-600'
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.2 }}
             >
               Get in Touch
-            </motion.a>
+            </motion.button>
           </>
         )}
       </AnimatePresence>
+
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)} 
+      />
     </div>
   )
 }
