@@ -31,7 +31,7 @@ const Hero = () => {
   return (
     <div className='pt-10 text-center'>
       <div className='pt-10 text-center'>
-        <div className='mb-4 flex justify-center text-6xl font-bold'>
+        <div className='mb-4 flex justify-center text-4xl sm:text-6xl font-bold'>
           <div className='relative flex'>
             {text.split('').map((char, index) => (
               <motion.span
@@ -44,7 +44,8 @@ const Hero = () => {
                 {char === ' ' ? '\u00A0' : char}
               </motion.span>
             ))}
-            <div className='relative ml-1 w-[2px]'>
+            {/* Fix for cursor jerking */}
+            <div className='relative ml-1 w-[1ch]'>
               <AnimatePresence>
                 {showCursor && (
                   <motion.span
@@ -65,7 +66,7 @@ const Hero = () => {
         {isTypingDone && (
           <>
             <motion.p
-              className='mb-8 text-xl'
+              className='mb-6 text-sm sm:mb-8 sm:text-xl'
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.2 }}
@@ -74,7 +75,7 @@ const Hero = () => {
             </motion.p>
             <motion.button
               onClick={() => setIsContactModalOpen(true)}
-              className='inline-block rounded-full bg-blue-500 px-6 py-3 hover:bg-blue-600'
+              className='inline-block rounded-full bg-blue-500 px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base hover:bg-blue-600'
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.2 }}
