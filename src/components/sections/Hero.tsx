@@ -28,7 +28,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-center">
+    <div className="flex flex-col items-center justify-center h-screen w-full text-center">
       <div className="mb-4 flex justify-center text-4xl font-bold sm:text-6xl">
         <div className="relative flex">
           {text.split('').map((char, index) => (
@@ -42,7 +42,6 @@ const Hero = () => {
               {char === ' ' ? '\u00A0' : char}
             </motion.span>
           ))}
-          {/* Fix for cursor jerking */}
           <div className="relative ml-1 w-[1ch]">
             <AnimatePresence>
               {showCursor && (
@@ -84,7 +83,7 @@ const Hero = () => {
           </div>
         )}
       </AnimatePresence>
-
+  
       <ContactModal
         isOpen={isContactModalOpen}
         onClose={() => setIsContactModalOpen(false)}

@@ -17,9 +17,6 @@ export default function Navbar() {
           <Link href="#skills" className="hover:text-primary">
             Skills
           </Link>
-          <Link href="#contact" className="hover:text-primary">
-            Contact
-          </Link>
         </div>
       </div>
     </nav>
