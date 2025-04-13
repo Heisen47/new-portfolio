@@ -28,7 +28,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen w-full text-center">
+    <div className="flex flex-col items-center justify-center w-full text-center py-20">
       <div className="mb-4 flex justify-center text-4xl font-bold sm:text-6xl">
         <div className="relative flex">
           {text.split('').map((char, index) => (
@@ -58,32 +58,34 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <AnimatePresence>
-        {isTypingDone && (
-          <div className="flex flex-col items-center space-y-4 h-[120px] sm:h-[150px]">
-            <motion.p
-              className="text-sm sm:text-xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.9, delay: 0.2 }}
-            >
-              Your friendly neighbourhood Software Engineer
-            </motion.p>
-            <motion.button
-              onClick={() => setIsContactModalOpen(true)}
-              className="inline-block rounded-full bg-blue-500 px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base hover:bg-blue-600"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.9, delay: 0.2 }}
-            >
-              Get in Touch
-            </motion.button>
-          </div>
-        )}
-      </AnimatePresence>
-  
+      <div className="flex flex-col items-center space-y-4 min-h-[150px] sm:min-h-[200px]">
+        <AnimatePresence>
+          {isTypingDone && (
+            <>
+              <motion.p
+                className="text-sm sm:text-xl"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.9, delay: 0.2 }}
+              >
+                Your friendly neighbourhood Software Engineer
+              </motion.p>
+              <motion.button
+                onClick={() => setIsContactModalOpen(true)}
+                className="inline-block rounded-full bg-blue-500 px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base hover:bg-blue-600"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.9, delay: 0.2 }}
+              >
+                Get in Touch
+              </motion.button>
+            </>
+          )}
+        </AnimatePresence>
+      </div>
+
       <ContactModal
         isOpen={isContactModalOpen}
         onClose={() => setIsContactModalOpen(false)}
