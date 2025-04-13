@@ -13,7 +13,7 @@ const Hero = () => {
     if (text.length < fullText.length) {
       const timeout = setTimeout(() => {
         setText(fullText.slice(0, text.length + 1))
-      }, 150) 
+      }, 150)
       return () => clearTimeout(timeout)
     } else {
       setIsTypingDone(true)
@@ -23,14 +23,14 @@ const Hero = () => {
   useEffect(() => {
     const cursorInterval = setInterval(() => {
       setShowCursor(prev => !prev)
-    }, 530) 
+    }, 530)
     return () => clearInterval(cursorInterval)
   }, [])
 
   return (
     <div className='pt-10 text-center'>
       <div className='pt-10 text-center'>
-        <div className='mb-4 flex justify-center text-4xl sm:text-6xl font-bold'>
+        <div className='mb-4 flex justify-center text-4xl font-bold sm:text-6xl'>
           <div className='relative flex'>
             {text.split('').map((char, index) => (
               <motion.span
@@ -63,31 +63,33 @@ const Hero = () => {
       </div>
       <AnimatePresence>
         {isTypingDone && (
-          <>
+          <div className='flex h-[120px] flex-col items-center space-y-4 sm:h-[150px]'>
             <motion.p
-              className='mb-6 text-sm sm:mb-8 sm:text-xl'
+              className='text-sm sm:text-xl'
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.9, delay: 0.2 }}
             >
               Your friendly neighbourhood Software Engineer
             </motion.p>
             <motion.button
               onClick={() => setIsContactModalOpen(true)}
-              className='inline-block rounded-full bg-blue-500 px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base hover:bg-blue-600'
+              className='inline-block rounded-full bg-blue-500 px-4 py-2 text-sm hover:bg-blue-600 sm:px-6 sm:py-3 sm:text-base'
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.9, delay: 0.2 }}
             >
               Get in Touch
             </motion.button>
-          </>
+          </div>
         )}
       </AnimatePresence>
 
-      <ContactModal 
-        isOpen={isContactModalOpen} 
-        onClose={() => setIsContactModalOpen(false)} 
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
       />
     </div>
   )
