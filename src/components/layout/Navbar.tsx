@@ -1,20 +1,27 @@
 import Link from 'next/link'
+import home from '../../Util/home.png'
+import Image from 'next/image'
 
 export default function Navbar() {
   return (
-    <nav className="bg-slate-900 text-white p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="text-xl font-bold">
-          My Portfolio
+    <nav className='bg-slate-900 p-4 text-white'>
+      <div className='container mx-auto flex items-center justify-between'>
+        <Link href='/' className='text-xl font-bold'>
+          <Image
+            src={home}
+            alt='logo'
+            width={90}
+            loading='lazy'
+          />
         </Link>
-        <div className="hidden md:flex space-x-6">
-          <Link href="#about" className="hover:text-primary">
+        <div className='hidden space-x-6 md:flex'>
+          <Link href='#about' className='hover:text-primary'>
             About
           </Link>
-          <Link href="#projects" className="hover:text-primary">
+          <Link href='#projects' className='hover:text-primary'>
             Projects
           </Link>
-          <Link href="#skills" className="hover:text-primary">
+          <Link href='#skills' className='hover:text-primary'>
             Skills
           </Link>
         </div>
