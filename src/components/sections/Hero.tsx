@@ -71,16 +71,16 @@ const Hero = () => {
               >
                 Your friendly neighbourhood Software Engineer
               </motion.p>
-              <motion.button
+                <motion.button
                 onClick={() => setIsContactModalOpen(true)}
-                className="inline-block rounded-full bg-blue-500 px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base hover:bg-blue-600"
+                className="inline-block rounded-full bg-transparent border border-blue-500 px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base text-blue-500 hover:bg-blue-500 hover:text-white hover:bg-opacity-20 shadow-[0_0_10px_rgba(59,130,246,0.8)]"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.9, delay: 0.2 }}
-              >
+                >
                 Get in Touch
-              </motion.button>
+                </motion.button>
             </>
           )}
         </AnimatePresence>

@@ -15,28 +15,28 @@ interface Project {
 export default function Projects() {
   const projects: Project[] = [
     {
-      title: "Project 1",
-      description: "Description of your project",
-      technologies: ["React", "TypeScript", "Tailwind"],
+      title: "Gym",
+      description: "The project is a customized app for my local gym.",
+      technologies: ["React", "Javascript","Spring Boot","Docker","MySQL"],
       imageUrl: "/projects/project1.png",
-      githubUrl: "https://github.com/yourusername/project1",
-      liveUrl: "https://project1.com"
+      githubUrl: "https://github.com/heisen47/gym",
+      liveUrl: "https://gym-frontend-nine.vercel.app/"
     },
     {
-      title: "Project 2",
-      description: "Description of your project",
-      technologies: ["React", "TypeScript", "Tailwind"],
+      title: "Ecommerce store",
+      description: "A CRUD application for an ecommerce site.",
+      technologies: ["React", "TypeScript", "Spring Boot", "PostgreSQL","Hibernate"],
       imageUrl: "/projects/project1.png",
-      githubUrl: "https://github.com/yourusername/project1",
+      githubUrl: "https://github.com/Heisen47/Ecommerce-backend",
       liveUrl: "https://project2.com"
     },
     {
-      title: "Project 3",
-      description: "Description of your project",
-      technologies: ["React", "TypeScript", "Tailwind"],
+      title: "Pujo Atlas",
+      description: "A festivity navigator app for the puja festival.",
+      technologies: ["React", "TypeScript", "Astro","Django","PostgreSQL"],
       imageUrl: "/projects/project1.png",
-      githubUrl: "https://github.com/yourusername/project1",
-      liveUrl: "https://project3.com"
+      githubUrl: "https://github.com/Pujo-Atlas-Kolkata/PujoAtlasKol-Web",
+      liveUrl: "https://atlas.ourkolkata.in/"
     }
   ]
 
