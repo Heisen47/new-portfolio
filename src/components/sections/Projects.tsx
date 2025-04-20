@@ -36,8 +36,7 @@ export default function Projects() {
       imageUrl: "/projects/project1.png",
       githubUrl: "https://github.com/yourusername/project1",
       liveUrl: "https://project3.com"
-    },
-    // ...existing projects
+    }
   ]
 
   return (
