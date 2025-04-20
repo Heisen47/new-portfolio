@@ -29,7 +29,7 @@ const About = () => {
             className='space-y-6 text-gray-300'
           >
             <p className='text-lg'>
-              Hi! I'm a passionate Full Stack Developer with expertise in both
+              <span className='text-4xl'>Hi!</span> I'm a passionate Full Stack Developer with expertise in both
               frontend and backend technologies. I specialize in building robust
               applications using Spring Boot for backend services and React for
               dynamic frontend interfaces.
