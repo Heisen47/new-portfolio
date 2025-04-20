@@ -28,6 +28,7 @@ const Skills = () => {
     { name: 'Git', icon: 'logos:git-icon', category: 'devops' },
     { name: 'Docker', icon: 'logos:docker-icon', category: 'devops' },
     { name: 'Jenkins', icon: 'logos:jenkins', category: 'devops' },
+    { name: 'AWS', icon: 'logos:aws', category: 'devops' },
     
     // Database
     { name: 'MongoDB', icon: 'logos:mongodb-icon', category: 'database' },
