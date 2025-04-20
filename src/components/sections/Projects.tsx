@@ -24,15 +24,15 @@ export default function Projects() {
     },
     {
       title: "Ecommerce store",
-      description: "A CRUD application for an ecommerce site.",
-      technologies: ["React", "TypeScript", "Spring Boot", "PostgreSQL","Hibernate"],
-      imageUrl: "/projects/project1.png",
-      githubUrl: "https://opengraph.githubassets.com/1/Heisen47/Ecommerce-backend",
+      description: "A backend application for an ecommerce site using springboot.",
+      technologies: ["Spring Boot", "PostgreSQL","Hibernate"],
+      imageUrl: "https://opengraph.githubassets.com/1/Heisen47/Ecommerce-backend",
+      githubUrl: "https://github.com/Heisen47/Ecommerce-backend",
       liveUrl: "https://project2.com"
     },
     {
       title: "Pujo Atlas",
-      description: "A festivity navigator app for the puja festival.",
+      description: "An Open source app for navigating festivity during the durga puja festival.",
       technologies: ["React", "TypeScript", "Astro","Django","PostgreSQL"],
       imageUrl: "https://opengraph.githubassets.com/1/Pujo-Atlas-Kolkata/PujoAtlasKol-Web",
       githubUrl: "https://github.com/Pujo-Atlas-Kolkata/PujoAtlasKol-Web",
