@@ -2,7 +2,7 @@ import { Github, Twitter } from 'lucide-react'
 import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import image from '../../Util/your-image.jpeg'
+import image from '../../Util/your-image.jpg'
 
 const About = () => {
   return (
