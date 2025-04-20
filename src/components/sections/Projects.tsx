@@ -18,7 +18,7 @@ export default function Projects() {
       title: "Gym",
       description: "The project is a customized app for my local gym.",
       technologies: ["React", "Javascript","Spring Boot","Docker","MySQL"],
-      imageUrl: "/projects/project1.png",
+      imageUrl: "https://opengraph.githubassets.com/1/heisen47/gym",
       githubUrl: "https://github.com/heisen47/gym",
       liveUrl: "https://gym-frontend-nine.vercel.app/"
     },
@@ -27,14 +27,14 @@ export default function Projects() {
       description: "A CRUD application for an ecommerce site.",
       technologies: ["React", "TypeScript", "Spring Boot", "PostgreSQL","Hibernate"],
       imageUrl: "/projects/project1.png",
-      githubUrl: "https://github.com/Heisen47/Ecommerce-backend",
+      githubUrl: "https://opengraph.githubassets.com/1/Heisen47/Ecommerce-backend",
       liveUrl: "https://project2.com"
     },
     {
       title: "Pujo Atlas",
       description: "A festivity navigator app for the puja festival.",
       technologies: ["React", "TypeScript", "Astro","Django","PostgreSQL"],
-      imageUrl: "/projects/project1.png",
+      imageUrl: "https://opengraph.githubassets.com/1/Pujo-Atlas-Kolkata/PujoAtlasKol-Web",
       githubUrl: "https://github.com/Pujo-Atlas-Kolkata/PujoAtlasKol-Web",
       liveUrl: "https://atlas.ourkolkata.in/"
     }
@@ -68,6 +68,10 @@ export default function Projects() {
                   fill
                   className="object-cover"
                   loading="lazy"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1470&auto=format&fit=crop";
+                  }}
                 />
               </div>
               <div className="p-6 space-y-4">
