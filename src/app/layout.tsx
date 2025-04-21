@@ -30,7 +30,7 @@ export default function RootLayout({
       </head>
       <body className='bg-background'>
         {children}
-        <Toaster position="bottom-right" 
+        <Toaster position="bottom-center" 
               theme="dark"
               toastOptions={{
                 style: {

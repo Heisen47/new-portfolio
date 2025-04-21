@@ -19,9 +19,17 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const [copied, setCopied] = useState(false)
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText("iamrishi.dev47@gmail.com")
+    navigator.clipboard.writeText("iamrishi.dev47@gmail.com").then(() => {
     setCopied(true)
-    setTimeout(() => setCopied(false), 2000) 
+    toast('Email copied to clipboard!', {
+      duration: 2000,
+    })
+    setTimeout(() => setCopied(false), 2000)
+  }).catch(() => {
+    toast('Failed to copy email', {
+      duration: 2000,
+    })
+  })
   }
 
   return (
@@ -44,9 +52,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             <Button
               variant="outline"
               className="flex items-center justify-center w-10 h-10 bg-slate-800 border-slate-700 text-white hover:bg-slate-700"
-              onClick={() => toast('Email copied to clipboard!', {
-                duration: 2000,
-              })}
+              onClick={handleCopyEmail}
             >
               <Mail className="h-5 w-5" />
             </Button>
