@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function Navbar() {
   return (
-    <nav className='bg-slate-900 p-4 text-white'>
+    <nav className='bg-transparent p-4 text-white'>
       <div className='container mx-auto flex items-center justify-between'>
         <Link href='/' className='text-xl font-bold'>
           <Image
