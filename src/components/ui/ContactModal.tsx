@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github, Copy, Check } from "lucide-react"
+import { Mail, Linkedin, Github, Copy, Check, Twitter } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -7,8 +7,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
-import { useToast } from "@/hooks/use-toast" // Corrected path
 import { useState } from "react"
+import { toast } from 'sonner';
 
 interface ContactModalProps {
   isOpen: boolean
@@ -16,17 +16,11 @@ interface ContactModalProps {
 }
 
 export function ContactModal({ isOpen, onClose }: ContactModalProps) {
-  const { toast } = useToast() // Initialize the toast hook
   const [copied, setCopied] = useState(false)
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText("iamrishi.dev47@gmail.com")
     setCopied(true)
-    toast({
-      title: "Email Copied!",
-      description: "email has been copied to your clipboard.",
-      variant: "default",
-    })
     setTimeout(() => setCopied(false), 2000) 
   }
 
@@ -50,7 +44,9 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             <Button
               variant="outline"
               className="flex items-center justify-center w-10 h-10 bg-slate-800 border-slate-700 text-white hover:bg-slate-700"
-              onClick={handleCopyEmail}
+              onClick={() => toast('Email copied to clipboard!', {
+                duration: 2000,
+              })}
             >
               <Mail className="h-5 w-5" />
             </Button>
@@ -78,6 +74,19 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 rel="noopener noreferrer"
               >
                 <Github className="h-5 w-5" />
+              </a>
+            </Button>
+            <Button
+              variant="outline"
+              className="flex items-center justify-center w-10 h-10 bg-slate-800 border-slate-700 text-white hover:bg-slate-700"
+              asChild
+            >
+              <a
+                href="https://x.com/iWriteCode__"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Twitter className="h-5 w-5" />
               </a>
             </Button>
           </div>
@@ -127,6 +136,20 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             >
               <Github className="h-5 w-5" />
               <span className="text-sm sm:text-base">GitHub Profile</span>
+            </a>
+          </Button>
+          <Button
+            variant="outline"
+            className="flex justify-start gap-2 bg-slate-800 border-slate-700 text-white hover:bg-slate-700"
+            asChild
+          >
+            <a
+              href="https://x.com/iWriteCode__"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Twitter className="h-5 w-5" />
+              <span className="text-sm sm:text-base">Twitter Profile</span>
             </a>
           </Button>
         </div>

@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import '@/app/globals.css'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Toaster } from 'sonner'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -29,6 +30,15 @@ export default function RootLayout({
       </head>
       <body className='bg-background'>
         {children}
+        <Toaster position="bottom-right" 
+              theme="dark"
+              toastOptions={{
+                style: {
+                  background: '#1e293b',
+                  color: 'white',
+                  border: '1px solid #334155'
+                }
+              }}/>
         <SpeedInsights />
         <Analytics />
       </body>
