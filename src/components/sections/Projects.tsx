@@ -28,7 +28,7 @@ export default function Projects() {
       technologies: ["Spring Boot", "PostgreSQL","Hibernate"],
       imageUrl: "https://opengraph.githubassets.com/1/Heisen47/Ecommerce-backend",
       githubUrl: "https://github.com/Heisen47/Ecommerce-backend",
-      liveUrl: "https://project2.com"
+      liveUrl: "https://github.com/Heisen47/Ecommerce-backend"
     },
     {
       title: "Pujo Atlas",

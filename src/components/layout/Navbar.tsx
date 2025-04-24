@@ -15,13 +15,13 @@ export default function Navbar() {
           />
         </Link>
         <div className='hidden space-x-6 md:flex'>
-          <Link href='#about' className='hover:text-primary'>
+          <Link href='#about' className='hover:text-slate-500'>
             About
           </Link>
-          <Link href='#projects' className='hover:text-primary'>
+          <Link href='#projects' className='hover:text-slate-500'>
             Projects
           </Link>
-          <Link href='#skills' className='hover:text-primary'>
+          <Link href='#skills' className='hover:text-slate-500'>
             Skills
           </Link>
         </div>
