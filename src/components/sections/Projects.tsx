@@ -1,4 +1,4 @@
-import { Github, ExternalLink } from 'lucide-react'
+import { Github, ExternalLink, BookOpen } from 'lucide-react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
@@ -9,6 +9,7 @@ interface Project {
   imageUrl: string
   githubUrl: string
   liveUrl?: string
+  mediumUrl?: string
 }
 
 export default function Projects() {
@@ -19,7 +20,8 @@ export default function Projects() {
       technologies: ['React', 'Javascript', 'Spring Boot', 'Docker', 'MySQL'],
       imageUrl: 'https://opengraph.githubassets.com/1/heisen47/itinerarly',
       githubUrl: 'https://github.com/Heisen47/itinerarly',
-      liveUrl: 'https://itinerarly-fe.vercel.app/'
+      liveUrl: 'https://itinerarly-fe.vercel.app/',
+      mediumUrl: 'https://medium.com/@iamrishi.dev47/learnings-while-building-itinerarly-f9a07291a918'
     },
     {
       title: 'Gym',
@@ -37,7 +39,7 @@ export default function Projects() {
       imageUrl:
         'https://opengraph.githubassets.com/1/Pujo-Atlas-Kolkata/PujoAtlasKol-Web',
       githubUrl: 'https://github.com/Pujo-Atlas-Kolkata/PujoAtlasKol-Web',
-      liveUrl: 'https://atlas.ourkolkata.in/'
+      liveUrl: 'https://atlas.ourkolkata.in/',
     }
   ]
 
@@ -112,6 +114,18 @@ export default function Projects() {
                       className='text-gray-300 hover:text-white'
                     >
                       <ExternalLink className='h-6 w-6' />
+                    </motion.a>
+                  )}
+                  {project.mediumUrl && (
+                    <motion.a
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                      href={project.mediumUrl}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='text-gray-300 hover:text-white'
+                    >
+                      <BookOpen className='h-6 w-6' />
                     </motion.a>
                   )}
                 </div>
