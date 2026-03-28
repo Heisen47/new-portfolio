@@ -88,7 +88,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
               asChild
             >
               <a
-                href="https://x.com/iWriteCode__"
+                href="https://x.com/rishTwtz_"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -150,7 +150,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             asChild
           >
             <a
-              href="https://x.com/iWriteCode__"
+              href="https://x.com/rishTwtz_"
               target="_blank"
               rel="noopener noreferrer"
             >
