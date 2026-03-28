@@ -2,47 +2,9 @@ import { Github, ExternalLink, BookOpen } from 'lucide-react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-interface Project {
-  title: string
-  description: string
-  technologies: string[]
-  imageUrl: string
-  githubUrl: string
-  liveUrl?: string
-  mediumUrl?: string
-}
+import { projects } from '@/data/projects'
 
 export default function Projects() {
-  const projects: Project[] = [
-    {
-      title: 'Itinerarly',
-      description: 'The project is about generating AI personalized travel itineraries.',
-      technologies: ['React', 'Javascript', 'Spring Boot', 'Docker', 'MySQL'],
-      imageUrl: 'https://opengraph.githubassets.com/1/heisen47/itinerarly',
-      githubUrl: 'https://github.com/Heisen47/itinerarly',
-      liveUrl: 'https://itinerarly-fe.vercel.app/',
-      mediumUrl: 'https://medium.com/@iamrishi.dev47/learnings-while-building-itinerarly-f9a07291a918'
-    },
-    {
-      title: 'Gym',
-      description: 'The project is a customized app for my local gym.',
-      technologies: ['React', 'Javascript', 'Spring Boot', 'Docker', 'MySQL'],
-      imageUrl: 'https://opengraph.githubassets.com/1/heisen47/gym',
-      githubUrl: 'https://github.com/heisen47/gym',
-      liveUrl: 'https://gym-frontend-nine.vercel.app/'
-    },
-    {
-      title: 'Pujo Atlas',
-      description:
-        'An Open source app for navigating festivity during the durga puja festival.',
-      technologies: ['React', 'TypeScript', 'Astro', 'Django', 'PostgreSQL'],
-      imageUrl:
-        'https://opengraph.githubassets.com/1/Pujo-Atlas-Kolkata/PujoAtlasKol-Web',
-      githubUrl: 'https://github.com/Pujo-Atlas-Kolkata/PujoAtlasKol-Web',
-      liveUrl: 'https://atlas.ourkolkata.in/',
-    }
-  ]
-
   return (
     <section id='projects' className='py-20'>
       <div className='container mx-auto px-4'>
@@ -54,7 +16,7 @@ export default function Projects() {
         >
           My Projects
         </motion.h2>
-        <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
+        <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4'>
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -62,9 +24,9 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className='overflow-hidden rounded-xl border border-white/10 bg-gray-800/50 backdrop-blur-sm'
+              className='flex flex-col overflow-hidden rounded-xl border border-white/10 bg-gray-800/50 backdrop-blur-sm'
             >
-              <div className='relative h-48 w-full'>
+              <div className='relative h-40 w-full shrink-0'>
                 <Image
                   src={project.imageUrl}
                   alt={project.title}
@@ -78,22 +40,22 @@ export default function Projects() {
                   }}
                 />
               </div>
-              <div className='space-y-4 p-6'>
-                <h3 className='text-xl font-semibold text-white'>
+              <div className='flex flex-1 flex-col space-y-3 p-4'>
+                <h3 className='text-lg font-semibold text-white'>
                   {project.title}
                 </h3>
-                <p className='text-gray-300'>{project.description}</p>
-                <div className='flex flex-wrap gap-2'>
+                <p className='text-sm text-gray-300 line-clamp-3'>{project.description}</p>
+                <div className='mt-auto flex flex-wrap gap-2 pt-2'>
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className='rounded-md bg-white/10 px-2 py-1 text-sm text-gray-300'
+                      className='rounded-md bg-white/10 px-2 py-1 text-xs text-gray-300'
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className='flex gap-4 pt-4'>
+                <div className='flex gap-4 pt-3'>
                   <motion.a
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
@@ -102,7 +64,7 @@ export default function Projects() {
                     rel='noopener noreferrer'
                     className='text-gray-300 hover:text-white'
                   >
-                    <Github className='h-6 w-6' />
+                    <Github className='h-5 w-5' />
                   </motion.a>
                   {project.liveUrl && (
                     <motion.a
@@ -113,7 +75,7 @@ export default function Projects() {
                       rel='noopener noreferrer'
                       className='text-gray-300 hover:text-white'
                     >
-                      <ExternalLink className='h-6 w-6' />
+                      <ExternalLink className='h-5 w-5' />
                     </motion.a>
                   )}
                   {project.mediumUrl && (
@@ -125,7 +87,7 @@ export default function Projects() {
                       rel='noopener noreferrer'
                       className='text-gray-300 hover:text-white'
                     >
-                      <BookOpen className='h-6 w-6' />
+                      <BookOpen className='h-5 w-5' />
                     </motion.a>
                   )}
                 </div>

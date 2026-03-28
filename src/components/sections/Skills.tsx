@@ -17,6 +17,7 @@ const Skills = () => {
     { name: 'TypeScript', icon: 'logos:typescript-icon', category: 'frontend' },
     { name: 'Next.js', icon: 'logos:nextjs-icon', category: 'frontend' },
     { name: 'Tailwind CSS', icon: 'logos:tailwindcss-icon', category: 'frontend' },
+    { name: 'Electron JS', icon: 'logos:electron', category: 'frontend' },
     
     // Backend
     { name: 'Java', icon: 'logos:java', category: 'backend' },
